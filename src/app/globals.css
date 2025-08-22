@@ -1,0 +1,173 @@
+
+/* @import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+@plugin "@tailwindcss/typography";
+@config "../../tailwind.config.ts";
+
+:root {
+  /* Updated color tokens for luxury silver investment theme */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.12 0 0); /* Deep navy #001e5e */
+  --card: oklch(0.98 0 0 / 0.8); /* White card with transparency for glass effect */
+  --card-foreground: oklch(0.4 0.01 240); /* Sophisticated gray text */
+  --popover: oklch(0.99 0 0 / 0.9); /* Slightly transparent white */
+  --popover-foreground: oklch(0.12 0.05 240); /* Deep navy text */
+  --primary: oklch(0.12 0 0); /* Deep navy primary #001e5e */
+  --primary-foreground: oklch(1 0 0); /* Pure white on primary */
+  --secondary: oklch(0.65 0.15 200); /* Elegant teal #00bcd4 */
+  --secondary-foreground: oklch(1 0 0); /* White on secondary */
+  --muted: oklch(0.96 0.005 240); /* Light elegant background #f0f4f8 */
+  --muted-foreground: oklch(0.4 0.01 240); /* Sophisticated text */
+  --accent: oklch(0.65 0.15 200); /* Teal accent for highlights */
+  --accent-foreground: oklch(1 0 0); /* White on accent */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.85 0.005 240); /* Subtle elegant borders #cfd8dc */
+  --input: oklch(1 0 0); /* Pure white inputs */
+  --ring: oklch(0.65 0.15 200 / 0.5); /* Teal focus ring with transparency */
+  --chart-1: oklch(0.65 0.15 200); /* Teal for charts */
+  --chart-2: oklch(0.12 0.05 240); /* Deep navy */
+  --chart-3: oklch(0.96 0.005 240); /* Light background */
+  --chart-4: oklch(0.85 0.005 240); /* Muted gray */
+  --chart-5: oklch(0.4 0.01 240); /* Dark gray */
+  --radius: 0.75rem; /* Increased radius for more modern look */
+  --sidebar: oklch(0.12 0.05 240);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.65 0.15 200);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.96 0.005 240);
+  --sidebar-accent-foreground: oklch(0.12 0.05 240);
+  --sidebar-border: oklch(0.85 0.005 240);
+  --sidebar-ring: oklch(0.65 0.15 200 / 0.5);
+  /* Updated font variable from DM Sans to Inter */
+  --font-inter: "Inter", "Inter Fallback", sans-serif;
+}
+
+.dark {
+  /* Updated dark mode colors to maintain #001e5e and white theme */
+  --background: oklch(0.12 0.05 240); /* Dark navy background */
+  --foreground: oklch(1 0 0); /* Pure white text */
+  --card: oklch(0.18 0.05 240 / 0.8); /* Darker navy cards */
+  --card-foreground: oklch(0.9 0 0); /* Light text on cards */
+  --popover: oklch(0.15 0.05 240 / 0.9); /* Dark popover */
+  --popover-foreground: oklch(1 0 0); /* White text on popover */
+  --primary: oklch(1 0 0); /* White primary in dark mode */
+  --primary-foreground: oklch(0.12 0.05 240); /* Navy text on white primary */
+  --secondary: oklch(0.65 0.15 200); /* Keep teal secondary */
+  --secondary-foreground: oklch(1 0 0); /* White on secondary */
+  --muted: oklch(0.22 0.05 240); /* Muted dark navy */
+  --muted-foreground: oklch(0.7 0.01 240); /* Light muted text */
+  --accent: oklch(0.65 0.15 200); /* Keep teal accent */
+  --accent-foreground: oklch(1 0 0); /* White on accent */
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.28 0.05 240); /* Dark borders */
+  --input: oklch(0.22 0.05 240); /* Dark inputs */
+  --ring: oklch(0.65 0.15 200 / 0.5); /* Teal focus ring */
+  --chart-1: oklch(0.65 0.15 200);
+  --chart-2: oklch(0.8 0.05 240);
+  --chart-3: oklch(0.6 0.01 240);
+  --chart-4: oklch(0.4 0.01 240);
+  --chart-5: oklch(0.3 0.01 240);
+  --sidebar: oklch(0.12 0.05 240);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.65 0.15 200);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.22 0.05 240);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.28 0.05 240);
+  --sidebar-ring: oklch(0.65 0.15 200 / 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Added smooth transition for theme switching */
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Updated glass morphism effects for both light and dark modes */
+  .glass-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .dark .glass-card {
+    background: rgba(0, 30, 94, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .luxury-gradient {
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(0, 30, 94, 0.05) 100%);
+  }
+
+  .dark .luxury-gradient {
+    background: linear-gradient(135deg, rgba(0, 188, 212, 0.2) 0%, rgba(0, 30, 94, 0.1) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #001e5e 0%, #00bcd4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .dark .text-gradient {
+    background: linear-gradient(135deg, #ffffff 0%, #00bcd4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
