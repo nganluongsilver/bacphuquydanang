@@ -36,8 +36,7 @@ export function TestimonialsSection() {
             </CardHeader>
             <CardContent>
               <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                "Tôi đã đầu tư bạc tại đây được 3 năm. Dịch vụ chuyên nghiệp, giá cả hợp lý và luôn được tư vấn tận
-                tình. Lợi nhuận ổn định qua các năm."
+                Tôi đã đầu tư bạc tại đây được 3 năm. Dịch vụ chuyên nghiệp, giá cả hợp lý và luôn được tư vấn tận tình. Lợi nhuận ổn định qua các năm.
               </p>
             </CardContent>
           </Card>
@@ -58,8 +57,7 @@ export function TestimonialsSection() {
             </CardHeader>
             <CardContent>
               <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                "Bạc Phú Quý giúp tôi hiểu rõ về đầu tư bạc từ A-Z. Tôi cảm thấy hoàn toàn an tâm khi gửi gắm tài sản
-                tại đây."
+                Bạc Phú Quý giúp tôi hiểu rõ về đầu tư bạc từ A-Z. Tôi cảm thấy hoàn toàn an tâm khi gửi gắm tài sản tại đây.
               </p>
             </CardContent>
           </Card>
@@ -80,8 +78,7 @@ export function TestimonialsSection() {
             </CardHeader>
             <CardContent>
               <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                "Chất lượng bạc xuất sắc, đội ngũ tư vấn rất chuyên nghiệp. Tôi sẽ tiếp tục đầu tư dài hạn và giới thiệu
-                bạn bè."
+                Chất lượng bạc xuất sắc, đội ngũ tư vấn rất chuyên nghiệp. Tôi sẽ tiếp tục đầu tư dài hạn và giới thiệu bạn bè.
               </p>
             </CardContent>
           </Card>

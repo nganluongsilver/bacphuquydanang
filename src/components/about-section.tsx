@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState, useEffect, useRef } from "react"
+import Image from 'next/image'
 
 export function AboutSection() {
   const [currentImage, setCurrentImage] = useState(0)
@@ -170,12 +171,15 @@ export function AboutSection() {
                 }}
               >
                 {images.map((image, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={image.src || "/nls_logo_root.jpg"}
                     alt={image.alt}
                     className="w-full h-64 md:h-80 object-cover flex-shrink-0 pointer-events-none"
                     draggable={false}
+                    width={800}
+                    height={320}
+                    priority={index === 0}
                   />
                 ))}
               </div>
