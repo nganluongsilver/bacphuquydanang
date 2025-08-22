@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Gem, MapPin, Clock } from "lucide-react"
+import { Gem, MapPin, Clock, Facebook } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -95,7 +95,8 @@ export function HeroSection() {
             className="px-8 py-4 text-base sm:text-lg font-semibold border-white text-white hover:bg-white/20 hover:scale-105 backdrop-blur-sm transition-all duration-300 bg-transparent dark:border-gray-300 dark:text-gray-200 dark:hover:bg-gray-300/20 transform hover:shadow-lg"
             onClick={() => window.open("https://www.facebook.com/bacphuquydanang", "_blank")}
           >
-            Liên Hệ Tư Vấn
+            <Facebook className="w-5 h-5 text-blue-400" />
+            Liên Hệ Fanpage Tại Đây
           </Button>
         </div>
 
