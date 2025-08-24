@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
   description:
-    "Đại Lý Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+    "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
   keywords: [
     "bạc phú quý đà nẵng",
     "đại lý bạc phú quý đà nẵng",
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     "đầu tư an toàn đà nẵng",
     "tích trữ tài sản đà nẵng",
   ].join(", "),
-  authors: [{ name: "Đại Lý Bạc Phú Quý Đà Nẵng" }],
-  creator: "Đại Lý Bạc Phú Quý Đà Nẵng",
-  publisher: "Đại Lý Bạc Phú Quý Đà Nẵng",
+  authors: [{ name: "Bạc Phú Quý Đà Nẵng" }],
+  creator: "Bạc Phú Quý Đà Nẵng",
+  publisher: "Bạc Phú Quý Đà Nẵng",
   robots: {
     index: true,
     follow: true,
@@ -50,10 +50,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "vi_VN",
     url: "https://bacphuquydanang.vn",
-    siteName: "Đại Lý Bạc Phú Quý Đà Nẵng",
+    siteName: "Bạc Phú Quý Đà Nẵng",
     title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
     description:
-      "Đại Lý Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+      "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
     images: [
       {
         url: "/cover fanpage nls phu quy 2.png",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
-    description: "Đại Lý Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+    description: "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
     images: [
       "/cover fanpage nls phu quy 2.png",
     ],

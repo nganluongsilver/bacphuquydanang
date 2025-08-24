@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer"
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Đại Lý Bạc Phú Quý Đà Nẵng",
+  name: "Bạc Phú Quý Đà Nẵng",
   description: "Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín, an toàn hàng đầu tại Đà Nẵng. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
   url: "https://bacphuquydanang.vn",
   telephone: "+84763600889",
