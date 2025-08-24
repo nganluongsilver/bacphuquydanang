@@ -83,11 +83,11 @@ export const metadata: Metadata = {
     ICBM: "16.0544, 108.2022",
   },
   icons: {
-    icon: "/avt_nls_phuquy_logo_2_rounded.png",
+    icon: "/images/favicon.ico",
     shortcut:
-      "/avt_nls_phuquy_logo_2_rounded.png",
+      "/images/favicon.ico",
     apple:
-      "/avt_nls_phuquy_logo_2_rounded.png",
+      "/images/favicon.ico",
   },
 }
 
@@ -98,6 +98,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${inter.variable} antialiased`} suppressHydrationWarning>
+      <link rel="icon" type="image/png" href="/images/favicon.ico"></link>
+      <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.ico"></link>
+      <link rel="apple-touch-icon" href="/images/favicon.ico"></link>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
