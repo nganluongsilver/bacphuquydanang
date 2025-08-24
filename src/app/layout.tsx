@@ -12,6 +12,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bacphuquydanang.vn'),
   title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
   description:
     "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "vi_VN",
-    url: "https://bacphuquydanang.vn",
+    url: "/",
     siteName: "Bạc Phú Quý Đà Nẵng",
     title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
     description:
@@ -72,15 +73,20 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: "https://bacphuquydanang.vn",
+    canonical: "/",
   },
   category: "Đầu tư kim loại quý",
   classification: "Business",
+  verification: {
+    google: "your-google-verification-code", // Thay bằng code thực tế
+  },
   other: {
     "geo.region": "VN-DN",
     "geo.placename": "Đà Nẵng",
     "geo.position": "16.0544;108.2022",
     ICBM: "16.0544, 108.2022",
+    "theme-color": "#001e5e",
+    "msapplication-TileColor": "#001e5e",
   },
   icons: {
     icon: "/images/favicon.ico",
@@ -98,9 +104,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" className={`${inter.variable} antialiased`} suppressHydrationWarning>
-      <link rel="icon" type="image/png" href="/images/favicon.ico"></link>
-      <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.ico"></link>
-      <link rel="apple-touch-icon" href="/images/favicon.ico"></link>
+      <head>
+        <link rel="icon" type="image/png" href="/images/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon.ico" />
+        <link rel="apple-touch-icon" href="/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#001e5e" />
+        <meta name="msapplication-TileColor" content="#001e5e" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Bạc Phú Quý Đà Nẵng" />
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}

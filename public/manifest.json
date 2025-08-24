@@ -1,0 +1,25 @@
+{
+  "name": "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
+  "short_name": "Bạc Phú Quý",
+  "description": "Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín tại Đà Nẵng",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#001e5e",
+  "theme_color": "#001e5e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "finance", "investment"],
+  "lang": "vi",
+  "dir": "ltr"
+}

@@ -52,7 +52,7 @@ export function Header() {
                 <Crown className="w-5 h-5 text-[#001e5e]" />
               </div>
               <div>
-                <h1 className="text-sm font-bold text-white">NGÂN LƯỢNG</h1>
+                <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
                 <p className="text-xs opacity-80 text-white">Silver</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export function Header() {
               <Crown className="w-5 h-5 text-[#001e5e]" />
             </div>
             <div>
-              <h1 className="text-sm font-bold text-white">NGÂN LƯỢNG</h1>
+              <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
               <p className="text-xs opacity-80 text-white">Silver</p>
             </div>
           </div>
