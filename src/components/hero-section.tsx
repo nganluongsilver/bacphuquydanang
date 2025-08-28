@@ -57,7 +57,7 @@ export function HeroSection() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in"
           style={{ animationDelay: "0.2s" }}
         >
-          <span className="block text-white dark:text-white">Trang Sức - Bạc Miếng - Bạc Thỏi</span>
+          <span className="block text-white dark:text-white">Bạc Phú Quý Đà Nẵng - Đại Lý Bạc Uy Tín Tại Đà Nẵng</span>
         </h1>
 
         <div className="flex items-center justify-center gap-2 mb-2 animate-fade-in" style={{ animationDelay: "0.4s" }}>
@@ -82,7 +82,7 @@ export function HeroSection() {
           className="text-lg sm:text-xl md:text-2xl mb-4 max-w-4xl mx-auto leading-relaxed text-white dark:text-gray-100 animate-fade-in"
           style={{ animationDelay: "0.8s" }}
         >
-          Bộ sưu tập trang sức, bạc miếng, bạc thỏi cao cấp từ Đại Lý Bạc Phú Quý Đà Nẵng
+          Bạc miếng, bạc thỏi, bạc tích trữ cao cấp từ Đại Lý Bạc Phú Quý Đà Nẵng
         </p>
 
         <div
