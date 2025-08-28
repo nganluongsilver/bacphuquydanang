@@ -1,4 +1,5 @@
 import { Crown, Phone, Mail, MapPin, Clock, Facebook, Youtube, Instagram } from "lucide-react"
+import Image from 'next/image'
 
 export function Footer() {
   return (
@@ -9,8 +10,8 @@ export function Footer() {
         <div className="grid md:grid-cols-5 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-white dark:bg-gray-200 rounded-xl flex items-center justify-center shadow-lg">
-                <Crown className="w-6 h-6 text-[#001e5e] dark:text-gray-800" />
+              <div className="w-10 h-10 dark:bg-gray-200 rounded-xl flex items-center justify-center shadow-lg">
+                <Image src="/images/favicon.ico" alt="logo" className="w-full h-full object-contain" width={32} height={32} />
               </div>
               <div>
                 <div className="text-lg font-bold text-white dark:text-gray-100">NGÂN LƯỢNG</div>

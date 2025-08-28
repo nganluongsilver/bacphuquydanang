@@ -2,6 +2,7 @@
 import { Crown, Search, Moon, Sun, Monitor, Menu, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
+import Image from 'next/image'
 
 export function Header() {
   const { theme, setTheme } = useTheme()
@@ -48,8 +49,8 @@ export function Header() {
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <Crown className="w-5 h-5 text-[#001e5e]" />
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+                <Image src="/images/favicon.ico" alt="logo" className="w-full h-full object-contain" width={32} height={32} />
               </div>
               <div>
                 <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
@@ -68,8 +69,8 @@ export function Header() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <Crown className="w-5 h-5 text-[#001e5e]" />
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
+              <Image src="/images/favicon.ico" alt="logo" className="w-full h-full object-contain" width={32} height={32} />
             </div>
             <div>
               <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
