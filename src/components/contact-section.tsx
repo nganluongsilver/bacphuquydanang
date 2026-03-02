@@ -1,74 +1,81 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin } from "lucide-react"
+
+const contacts = [
+  {
+    icon: Phone,
+    title: "Hotline VIP",
+    value: "0763 600 889",
+    sub: "Hỗ trợ 24/7",
+    href: "tel:0763600889",
+  },
+  {
+    icon: Mail,
+    title: "Email",
+    value: "nganluong@gmail.com",
+    sub: "Phản hồi trong 30 phút",
+    href: "mailto:nganluong@gmail.com",
+  },
+  {
+    icon: MapPin,
+    title: "Showroom",
+    value: "197 Nguyễn Văn Linh",
+    sub: "Hải Châu, Đà Nẵng",
+    href: "https://maps.google.com/?q=197+Nguyễn+Văn+Linh+Hải+Châu+Đà+Nẵng",
+  },
+]
 
 export function ContactSection() {
   return (
-    <section id="lien-he" className="py-24 relative bg-white dark:bg-gray-900">
-      <div className="relative container mx-auto px-4">
-        <div className="text-center mb-20">
-          <Badge className="mb-4 px-4 py-2 bg-[#001e5e] text-white dark:bg-gray-700 dark:text-gray-100">
-            <Phone className="w-4 h-4 mr-2" />
-            Liên Hệ Ngay
-          </Badge>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#001e5e] dark:text-gray-100 mb-6">
-            Tư Vấn Miễn Phí
-            <span className="block text-[#001e5e] dark:text-gray-100">24/7</span>
+    <section id="lien-he" className="py-24 bg-[#1a2644] relative">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+
+      <div className="container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-white/20" />
+            <span className="text-white/50 text-[10px] tracking-[0.4em] uppercase">Liên Hệ</span>
+            <div className="h-px w-10 bg-white/20" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-light text-white mb-4 tracking-tight">
+            Tư Vấn{" "}
+            <span className="font-semibold">Miễn Phí</span>
           </h2>
-          <p className="text-lg sm:text-xl text-[#001e5e]/70 dark:text-gray-400 leading-relaxed">
-            Nhân viên nhiều năm kinh nghiệm sẵn sàng tư vấn cho bạn
+          <p className="text-white/40 text-sm max-w-md mx-auto leading-relaxed">
+            Đội ngũ chuyên gia sẵn sàng tư vấn cho bạn mọi lúc
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="bg-white dark:bg-gray-800 border border-[#001e5e]/10 dark:border-gray-700 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 text-center group">
-            <CardHeader>
-              <div className="w-16 h-16 bg-[#001e5e] dark:bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <Phone className="w-8 h-8 text-white" />
+        {/* Contact Cards */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          {contacts.map((c, i) => (
+            <a
+              key={i}
+              href={c.href}
+              target={c.href.startsWith('http') ? '_blank' : undefined}
+              rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              className="group border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/30 transition-all duration-500 p-8 text-center block"
+            >
+              <div className="w-12 h-12 border border-white/15 group-hover:border-white/40 flex items-center justify-center mx-auto mb-5 transition-all duration-300">
+                <c.icon className="w-5 h-5 text-white/40 group-hover:text-white/80 transition-colors duration-300" />
               </div>
-              <CardTitle className="text-xl sm:text-2xl font-bold text-[#001e5e] dark:text-gray-100">
-                Hotline VIP
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-xl sm:text-2xl font-bold text-[#001e5e] dark:text-gray-200 mb-2">0763 600 889</p>
-              <p className="text-[#001e5e]/70 dark:text-gray-400">Hỗ trợ 24/7</p>
-            </CardContent>
-          </Card>
+              <h3 className="text-xs font-semibold text-white/50 tracking-[0.2em] uppercase mb-3">{c.title}</h3>
+              <p className="text-sm font-semibold text-white/80 mb-1">{c.value}</p>
+              <p className="text-[11px] text-white/40">{c.sub}</p>
+            </a>
+          ))}
+        </div>
 
-          <Card className="bg-white dark:bg-gray-800 border border-[#001e5e]/10 dark:border-gray-700 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 text-center group">
-            <CardHeader>
-              <div className="w-16 h-16 bg-[#001e5e] dark:bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-xl sm:text-2xl font-bold text-[#001e5e] dark:text-gray-100">
-                Email
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-base sm:text-lg font-semibold text-[#001e5e] dark:text-gray-200 mb-2">
-                nganluongsilver@gmail.com
-              </p>
-              <p className="text-[#001e5e]/70 dark:text-gray-400">Phản hồi trong 30 phút</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white dark:bg-gray-800 border border-[#001e5e]/10 dark:border-gray-700 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-2 text-center group">
-            <CardHeader>
-              <div className="w-16 h-16 bg-[#001e5e] dark:bg-gray-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <CardTitle className="text-xl sm:text-2xl font-bold text-[#001e5e] dark:text-gray-100">
-                Showroom
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-base sm:text-lg font-semibold text-[#001e5e] dark:text-gray-200 mb-2">
-                45 Bàu Hạc 8, Thanh Khê, Đà Nẵng
-              </p>
-              <p className="text-[#001e5e]/70 dark:text-gray-400">Đà Nẵng, Việt Nam</p>
-            </CardContent>
-          </Card>
+        {/* CTA */}
+        <div className="text-center mt-12">
+          <a
+            href="https://www.facebook.com/bacphuquydanang"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-10 py-4 bg-white hover:bg-white/90 text-[#1a2644] text-xs tracking-[0.2em] uppercase font-semibold transition-all duration-300 shadow-lg shadow-black/20"
+          >
+            Liên Hệ Tư Vấn Ngay
+          </a>
         </div>
       </div>
     </section>

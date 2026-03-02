@@ -1,5 +1,5 @@
 "use client"
-import { Crown, Search, Moon, Sun, Monitor, Menu, X } from "lucide-react"
+import { Moon, Sun, Monitor, Menu, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
 import Image from 'next/image'
@@ -8,56 +8,45 @@ export function Header() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    const handleScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const toggleTheme = () => {
-    console.log("[v0] Current theme:", theme)
-    let newTheme: string
-
-    if (theme === "system") {
-      newTheme = "light"
-    } else if (theme === "light") {
-      newTheme = "dark"
-    } else {
-      newTheme = "system"
-    }
-
-    console.log("[v0] Setting theme to:", newTheme)
-    setTheme(newTheme)
+    if (theme === "system") setTheme("light")
+    else if (theme === "light") setTheme("dark")
+    else setTheme("system")
   }
 
   const getThemeIcon = () => {
-    if (theme === "dark") {
-      return <Sun className="w-4 h-4 text-white" />
-    } else if (theme === "light") {
-      return <Moon className="w-4 h-4 text-white" />
-    } else {
-      return <Monitor className="w-4 h-4 text-white" />
-    }
+    if (theme === "dark") return <Sun className="w-4 h-4" />
+    if (theme === "light") return <Moon className="w-4 h-4" />
+    return <Monitor className="w-4 h-4" />
   }
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+  const navLinks = [
+    { label: "Trang chủ", href: "#" },
+    { label: "Sản phẩm", href: "https://www.nganluongsilver.com/" },
+    { label: "Giá bạc hôm nay", href: "https://www.nganluongsilver.com/gia-bac-hom-nay" },
+    { label: "Điểm bán", href: "https://www.nganluongsilver.com/diem-ban" },
+    { label: "Liên hệ", href: "#lien-he" },
+  ]
 
   if (!mounted) {
     return (
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#001e5e] text-white shadow-lg border-b border-white/10 backdrop-blur-md">
-        <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-                <Image src="/images/favicon.ico" alt="logo" className="w-full h-full object-contain" width={32} height={32} />
-              </div>
-              <div>
-                <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
-                <p className="text-xs opacity-80 text-white">Silver</p>
-              </div>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#1a2644] text-white">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Image src="/images/favicon.ico" alt="logo" width={28} height={28} className="object-contain" />
+            <div>
+              <span className="text-sm font-semibold tracking-widest text-white uppercase">Ngân Lượng</span>
+              <span className="block text-[10px] tracking-[0.3em] text-white/60 uppercase">Vàng Bạc</span>
             </div>
-            <div className="w-6 h-6"></div>
           </div>
         </div>
       </header>
@@ -65,103 +54,83 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#001e5e] dark:bg-gray-900 text-white shadow-lg border-b border-white/10 backdrop-blur-md">
-      <div className="container mx-auto px-4 py-2">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-              <Image src="/images/favicon.ico" alt="logo" className="w-full h-full object-contain" width={32} height={32} />
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled
+        ? 'bg-[#1a2644]/98 backdrop-blur-xl shadow-2xl shadow-[#1a2644]/50'
+        : 'bg-gradient-to-b from-[#1a2644]/80 to-transparent backdrop-blur-sm'
+    }`}>
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-9 h-9 rounded-full overflow-hidden ring-1 ring-white/20 group-hover:ring-white/50 transition-all duration-300">
+              <Image src="/images/favicon.ico" alt="logo" width={36} height={36} className="w-full h-full object-contain" />
             </div>
-            <div>
-              <h2 className="text-sm font-bold text-white">NGÂN LƯỢNG</h2>
-              <p className="text-xs opacity-80 text-white">Silver</p>
+            <div className="leading-tight">
+              <span className="block text-xs font-bold tracking-[0.25em] text-white uppercase">Ngân Lượng</span>
+              <span className="block text-[9px] tracking-[0.4em] text-white/60 uppercase font-medium">Vàng Bạc</span>
             </div>
-          </div>
+          </a>
 
-          <nav className="hidden lg:flex items-center space-x-6">
-            <a href="#" className="text-sm hover:text-white/80 transition-colors text-white">
-              Trang chủ
-            </a>
-            <a
-              href="https://www.nganluongsilver.com/"
-              className="text-sm hover:text-white/80 transition-colors text-white"
-            >
-              Sản phẩm
-            </a>
-            <a
-              href="https://www.nganluongsilver.com/gia-bac-hom-nay"
-              className="text-sm hover:text-white/80 transition-colors text-white"
-            >
-              Giá bạc hôm nay
-            </a>
-            <a
-              href="https://www.nganluongsilver.com/diem-ban"
-              className="text-sm hover:text-white/80 transition-colors text-white"
-            >
-              Điểm bán
-            </a>
-            <a href="#lien-he" className="text-sm hover:text-white/80 transition-colors text-white">
-              Liên hệ
-            </a>
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-xs tracking-widest text-white/60 hover:text-white transition-colors duration-300 uppercase font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          <div className="flex items-center space-x-3">
-            {/* Search box */}
-            <div className="hidden md:flex items-center bg-white/10 rounded-lg px-3 py-1.5">
-              <Search className="w-4 h-4 text-white/60 mr-2" />
-              <input
-                type="text"
-                placeholder="Tìm kiếm sản phẩm..."
-                className="bg-transparent text-sm text-white placeholder-white/60 border-none outline-none w-40"
-              />
-            </div>
-
+          {/* Right Controls */}
+          <div className="flex items-center gap-3">
             <button
-              type="button"
               onClick={toggleTheme}
-              className="p-1.5 hover:bg-white/10 rounded-lg transition-colors"
-              aria-label={`Switch theme (current: ${theme})`}
+              className="p-2 text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-all duration-300"
+              aria-label="Toggle theme"
             >
               {getThemeIcon()}
             </button>
 
-            {/* Mobile menu */}
-            <button
-              onClick={toggleMobileMenu}
-              className="lg:hidden p-1.5 hover:bg-white/10 rounded-lg transition-colors"
+            <a
+              href="tel:0763600889"
+              className="hidden md:flex items-center gap-2 px-4 py-1.5 border border-white/20 text-white text-xs tracking-widest uppercase hover:bg-white hover:text-[#1a2644] transition-all duration-300 rounded-sm"
             >
-              {isMobileMenuOpen ? <X className="w-4 h-4 text-white" /> : <Menu className="w-4 h-4 text-white" />}
+              0763 600 889
+            </a>
+
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 text-white/70 hover:text-white transition-colors"
+            >
+              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-[#001e5e] dark:bg-gray-900">
-          <nav className="py-4 space-y-2">
-            <a href="#" className="block px-4 py-2 text-sm hover:bg-white/10 transition-colors text-white">
-              Trang chủ
-            </a>
+        <div className="lg:hidden bg-[#1a2644] border-t border-white/10">
+          <nav className="container mx-auto px-6 py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-xs tracking-widest text-white/60 hover:text-white transition-colors uppercase font-medium py-2 border-b border-white/10"
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              href="https://www.nganluongsilver.com/"
-              className="block px-4 py-2 text-sm hover:bg-white/10 transition-colors text-white"
+              href="tel:0763600889"
+              className="mt-2 text-center px-4 py-3 border border-white/20 text-white text-xs tracking-widest uppercase hover:bg-white hover:text-[#1a2644] transition-all duration-300"
             >
-              Sản phẩm
-            </a>
-            <a
-              href="https://www.nganluongsilver.com/gia-bac-hom-nay"
-              className="block px-4 py-2 text-sm hover:bg-white/10 transition-colors text-white"
-            >
-              Giá bạc hôm nay
-            </a>
-            <a
-              href="https://www.nganluongsilver.com/diem-ban"
-              className="block px-4 py-2 text-sm hover:bg-white/10 transition-colors text-white"
-            >
-              Điểm bán
-            </a>
-            <a href="#lien-he" className="block px-4 py-2 text-sm hover:bg-white/10 transition-colors text-white">
-              Liên hệ
+              Gọi: 0763 600 889
             </a>
           </nav>
         </div>

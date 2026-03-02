@@ -13,9 +13,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bacphuquydanang.vn'),
-  title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
+  title: "Bạc Phú Quý Đà Nẵng - Vàng Bạc Ngân Lượng",
   description:
-    "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+    "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 197 Nguyễn Văn Linh, Hải Châu, Đà Nẵng",
   keywords: [
     "bạc phú quý đà nẵng",
     "đại lý bạc phú quý đà nẵng",
@@ -52,22 +52,22 @@ export const metadata: Metadata = {
     locale: "vi_VN",
     url: "/",
     siteName: "Bạc Phú Quý Đà Nẵng",
-    title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
+    title: "Bạc Phú Quý Đà Nẵng - Vàng Bạc Ngân Lượng",
     description:
-      "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+      "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 197 Nguyễn Văn Linh, Hải Châu, Đà Nẵng",
     images: [
       {
         url: "/cover fanpage nls phu quy 2.png",
         width: 1200,
         height: 630,
-        alt: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
+        alt: "Bạc Phú Quý Đà Nẵng - Vàng Bạc Ngân Lượng",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bạc Phú Quý Đà Nẵng - Ngân Lượng Silver",
-    description: "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 45 Bàu Hạc 8, Thanh Khê, Đà Nẵng",
+    title: "Bạc Phú Quý Đà Nẵng - Vàng Bạc Ngân Lượng",
+    description: "Bạc Phú Quý Đà Nẵng, Chuyên cung cấp dịch vụ đầu tư bạc tích trữ uy tín. Hotline: 0763600889 | Địa Chỉ: 197 Nguyễn Văn Linh, Hải Châu, Đà Nẵng",
     images: [
       "/cover fanpage nls phu quy 2.png",
     ],
@@ -85,8 +85,8 @@ export const metadata: Metadata = {
     "geo.placename": "Đà Nẵng",
     "geo.position": "16.0544;108.2022",
     ICBM: "16.0544, 108.2022",
-    "theme-color": "#001e5e",
-    "msapplication-TileColor": "#001e5e",
+    "theme-color": "#1a2644",
+    "msapplication-TileColor": "#1a2644",
   },
   icons: {
     icon: "/images/favicon.ico",
@@ -110,8 +110,8 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="theme-color" content="#001e5e" />
-        <meta name="msapplication-TileColor" content="#001e5e" />
+        <meta name="theme-color" content="#1a2644" />
+        <meta name="msapplication-TileColor" content="#1a2644" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Bạc Phú Quý Đà Nẵng" />

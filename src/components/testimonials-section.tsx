@@ -1,87 +1,70 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Star } from "lucide-react"
+
+const testimonials = [
+  {
+    name: "Anh Minh",
+    role: "Doanh Nhân",
+    content: "Tôi đã đầu tư bạc tại đây được 3 năm. Dịch vụ chuyên nghiệp, giá cả hợp lý và luôn được tư vấn tận tình. Lợi nhuận ổn định qua các năm.",
+  },
+  {
+    name: "Chị Lan",
+    role: "Giáo Viên",
+    content: "Bạc Phú Quý giúp tôi hiểu rõ về đầu tư bạc từ A-Z. Tôi cảm thấy hoàn toàn an tâm khi gửi gắm tài sản tại đây.",
+  },
+  {
+    name: "Ông Hùng",
+    role: "Kỹ Sư",
+    content: "Chất lượng bạc xuất sắc, đội ngũ tư vấn rất chuyên nghiệp. Tôi sẽ tiếp tục đầu tư dài hạn và giới thiệu bạn bè.",
+  },
+]
 
 export function TestimonialsSection() {
   return (
-    <section id="danh-gia" className="py-24 relative overflow-hidden bg-white dark:bg-black">
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#001e5e] via-white to-[#001e5e] dark:from-yellow-400 dark:via-yellow-600 dark:to-yellow-400"></div>
+    <section id="danh-gia" className="py-24 bg-[#111b35] relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_#1a2644_0%,_#111b35_70%)] opacity-70" />
 
-      <div className="relative container mx-auto px-4">
-        <div className="text-center mb-20">
-          <Badge className="mb-4 px-4 py-2 bg-[#001e5e] text-white dark:bg-yellow-400 dark:text-black">
-            <Star className="w-4 h-4 mr-2" />
-            Khách Hàng Tin Tưởng
-          </Badge>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#001e5e] mb-6 dark:text-white">
-            Hàng Nghìn Khách Hàng
-            <span className="block text-[#001e5e] dark:text-white">Đã Tin Tưởng Chúng Tôi</span>
+      <div className="relative container mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="h-px w-10 bg-white/20" />
+            <span className="text-white/50 text-[10px] tracking-[0.4em] uppercase">Khách Hàng</span>
+            <div className="h-px w-10 bg-white/20" />
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-light text-white tracking-tight">
+            Hàng Nghìn Khách Hàng{" "}
+            <span className="font-semibold">Tin Tưởng</span>
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="bg-white dark:bg-gray-900 border border-[#001e5e]/10 dark:border-yellow-400/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <div className="flex items-center space-x-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-[#001e5e] text-[#001e5e] dark:fill-yellow-400 dark:text-yellow-400"
-                  />
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className="group border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] hover:border-white/25 transition-all duration-500 p-8"
+            >
+              <div className="flex gap-1 mb-6">
+                {Array.from({ length: 5 }).map((_, j) => (
+                  <Star key={j} className="w-3 h-3 fill-white/60 text-white/60" />
                 ))}
               </div>
-              <CardTitle className="text-lg sm:text-xl font-bold text-[#001e5e] dark:text-yellow-400">
-                Anh Minh - Doanh Nhân
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                Tôi đã đầu tư bạc tại đây được 3 năm. Dịch vụ chuyên nghiệp, giá cả hợp lý và luôn được tư vấn tận tình. Lợi nhuận ổn định qua các năm.
-              </p>
-            </CardContent>
-          </Card>
 
-          <Card className="bg-white dark:bg-gray-900 border border-[#001e5e]/10 dark:border-yellow-400/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <div className="flex items-center space-x-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-[#001e5e] text-[#001e5e] dark:fill-yellow-400 dark:text-yellow-400"
-                  />
-                ))}
-              </div>
-              <CardTitle className="text-lg sm:text-xl font-bold text-[#001e5e] dark:text-yellow-400">
-                Chị Lan - Giáo Viên
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                Bạc Phú Quý giúp tôi hiểu rõ về đầu tư bạc từ A-Z. Tôi cảm thấy hoàn toàn an tâm khi gửi gắm tài sản tại đây.
+              <p className="text-white/50 text-sm leading-relaxed mb-8 italic">
+                &ldquo;{t.content}&rdquo;
               </p>
-            </CardContent>
-          </Card>
 
-          <Card className="bg-white dark:bg-gray-900 border border-[#001e5e]/10 dark:border-yellow-400/30 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-            <CardHeader>
-              <div className="flex items-center space-x-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-[#001e5e] text-[#001e5e] dark:fill-yellow-400 dark:text-yellow-400"
-                  />
-                ))}
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="w-8 h-8 bg-white/10 border border-white/20 flex items-center justify-center text-white/70 text-xs font-semibold">
+                  {t.name.charAt(t.name.lastIndexOf(' ') + 1)}
+                </div>
+                <div>
+                  <div className="text-xs font-semibold text-white/80 tracking-wide">{t.name}</div>
+                  <div className="text-[10px] text-white/40 tracking-widest uppercase">{t.role}</div>
+                </div>
               </div>
-              <CardTitle className="text-lg sm:text-xl font-bold text-[#001e5e] dark:text-yellow-400">
-                Ông Hùng - Kỹ Sư
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-[#001e5e]/70 dark:text-gray-200 leading-relaxed">
-                Chất lượng bạc xuất sắc, đội ngũ tư vấn rất chuyên nghiệp. Tôi sẽ tiếp tục đầu tư dài hạn và giới thiệu bạn bè.
-              </p>
-            </CardContent>
-          </Card>
+            </div>
+          ))}
         </div>
       </div>
     </section>
