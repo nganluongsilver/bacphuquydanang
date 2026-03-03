@@ -5,9 +5,14 @@ const nextConfig: NextConfig = {
   compress: true,
   generateEtags: true,
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: ['bacphuquydanang.vn'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'bacphuquydanang.vn',
+        pathname: '/**',
+      },
+    ],
     formats: ['image/webp', 'image/avif'],
   },
   async headers() {
